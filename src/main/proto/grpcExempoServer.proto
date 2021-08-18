@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zupacademy";
+option java_outer_classname = "Frete";
+
+package br.com.zupacademy;
+
+service FreteService {
+  rpc consultaCep(CepRequest) returns (CepResponse){}
+}
+
+message CepRequest{
+  string cep = 1;
+}
+
+message CepResponse{
+  string cep = 1;
+  double valor = 2;
+}
+
+message ErrorDetails{
+  int32 code = 1;
+  string message = 2;
+}
